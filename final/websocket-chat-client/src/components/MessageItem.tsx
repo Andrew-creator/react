@@ -16,7 +16,10 @@ export default function MessageItem({ message, removeMessage }) {
     } else {
         return (
             <div className='w-full flow-root p-[10px]'>
-                <div className="float-left p-[20px] bg-green-500 rounded-xl">{element}</div>
+                <div className="float-left p-[20px] bg-green-500 rounded-xl">
+                    <div className="text-sm">{message.userName}:</div>
+                    <div className='text-base'>{element}</div>
+                </div>
             </div>
         )
     }
