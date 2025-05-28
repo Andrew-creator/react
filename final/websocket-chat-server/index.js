@@ -23,37 +23,7 @@ app.use(
 )
 app.use(express.json())
 
-/*
-app.use('/upload', upload.single('file'), (req, res) => {
-  if (!req.file) return res.sendStatus(400)
-
-  const relativeFilePath = req.file.path
-    .replace(/\\/g, '/')
-    .split('server/files')[1]
-
-  res.status(201).json(relativeFilePath)
-})
-
-app.use('/files', (req, res) => {
-  const filePath = getFilePath(req.url)
-
-  res.status(200).sendFile(filePath)
-})
-*/
-
 app.use(onError)
-
-/*
-try {
-  await mongoose.connect(MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  console.log('🚀 Connected')
-} catch (e) {
-  onError(e)
-}
-*/
 
 loadRoomMessages("1", (messages) => {
   if (messages == null) console.log("messages from room 1 not loaded")
