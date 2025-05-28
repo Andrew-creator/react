@@ -25,33 +25,6 @@ function useChat() {
     })
   }
 
-/*
-  const refSocket = useRef(null)
-  let socket = refSocket.current
-
-  if (socket == null) {
-    socket = io(SERVER_URI, {
-      query: {
-        userID: user.id,
-        userName: user.name
-      },
-      'reconnection': false,
-    })
-    refSocket.current = socket
-  }
-*/
-/*
-  const { current: socket } = useRef(
-    io(SERVER_URI, {
-      query: {
-        userID: user.id,
-        userName: user.name
-      },
-      'reconnection': false,
-    })
-  )
-*/
-
   useEffect(() => {
     socket.on('log', (log) => {
       setLog(log)
